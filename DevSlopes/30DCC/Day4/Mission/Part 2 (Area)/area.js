@@ -11,3 +11,5 @@ rectangleArea = (length * width);
 
 console.log("Area of the rectangle is " + rectangleArea + "ft.");
 console.log('\n-------------------------------');
+
+

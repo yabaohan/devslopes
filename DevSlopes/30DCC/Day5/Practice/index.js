@@ -32,21 +32,35 @@ var myAccountBalance = 300;
 var nintendoSwitch = 799.23;
 var coupon = 500;
 
-// if (nintendoSwitch <= myAccountBalance){
-//   myAccountBalance -= nintendoSwitch;
-//   console.log("We just bought a new Switch!");
-//   console.log("Account Balance: " + myAccountBalance);
-// } else if (nintendoSwitch - coupon <= myAccountBalance) {
-//   console.log('You are a cheapskate,but here is your switch!');
-//   myAccountBalance -= nintendoSwitch - coupon;
-//   console.log("Account Balance: " + myAccountBalance);
-// } else {
-//   console.log("You're too broke for a game nerd");
-// }
+if (nintendoSwitch <= myAccountBalance){
+  myAccountBalance -= nintendoSwitch;
+  console.log("We just bought a new Switch!");
+  console.log("Account Balance: " + myAccountBalance);
+} else if (nintendoSwitch - coupon <= myAccountBalance) {
+  console.log('You are a cheapskate,but here is your switch!');
+  myAccountBalance -= nintendoSwitch - coupon;
+  console.log("Account Balance: " + myAccountBalance.toFixed(2));
+} else {
+  console.log("You're too broke for a game nerd");
+}
 
 var age = 23;
 var joesAge = "23";
 
 if(age == joesAge) {
-  
+  console.log("I'm the same age as Joe!");
 }
+
+var val1 = 23;
+var val2 = '23';
+
+if (val1 === val2) {
+  console.log("These are the same!");
+}
+  
+  else {
+    console.log("One of these is not like the other...");
+  }
+    
+  
+    
