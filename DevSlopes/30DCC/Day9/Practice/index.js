@@ -35,9 +35,52 @@ console.log(gradeAStudents);
 //Reduce
 //takes elements of an array and reduce it to a single value
 var sum = 0;
+
 for (var n of numbers) {
     sum+= n;
 };
 console.log(sum);
 
+//first argument is the function 
+//second argument is where the accumulator starts
+// a = 0, c = 2 (first element of the numbers array)=> 2
+// a = 2, c = 5 => 7
+// a = 7, c = 7 => 14
+// a = 14, c = 1 => 15
+var sum = numbers.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue;
+} , 0);
+console.log(sum);
+
+//first parameter is the parameter that's storing 
+//scoreTotal calculates the total score from each student.score
+var scoreTotal = classRoom.students.reduce(function(acc, val){
+    return acc + val.score;
+} , 0);
+
+console.log(scoreTotal);
+
+classRoom.studentAverage = scoreTotal / classRoom.students.length;
+console.log(classRoom);
+
+//Array Method Chaining
+
+var starStudents = classRoom.students
+    .filter(function(student,){
+    return student.score >= 80;
+})
+    .map(function(value){
+    value.score += 5;
+    return value;
+})
+    .reduce(function(acc, val , index, array){
+    const total = acc.sum + val.score;
+    return {
+        sum:total,
+        arr:array,
+    }
+} , {sum: 0, arr: []});
+
+var studentAverage = starStudents.sum / starStudents.arr.length
+console.log(starStudents, studentAverage);
 
