@@ -3,31 +3,31 @@
 var numbers = [2, 5, 7, 1];
 
 var classRoom = {
-    grade: '3rd Grade' ,
-    students: [
-        {name: 'James' , score: 90},
-        {name: 'Jenny' , score: 92},
-        {name: 'Jacob' , score: 87},
-        {name: 'Kate' , score: 78},
-    ]
+  grade: '3rd Grade',
+  students: [
+    { name: 'James', score: 90 },
+    { name: 'Jenny', score: 92 },
+    { name: 'Jacob', score: 87 },
+    { name: 'Kate', score: 78 },
+  ]
 };
 
-var helloStudents = classRoom.students.map(function(student ,i , array){
-    return `Index ${i}: Hello ${student.name}`;
-});6
+var helloStudents = classRoom.students.map(function(student, i, array) {
+  return `Index ${i}: Hello ${student.name}`;
+});
 
 console.log(helloStudents);
 
 //Filter 
 //make a callback function that returns the students with scores higher than or equal to 90
-var filter = numbers.filter(function(n , i){
-    console.log(i);
-    return n <= 5;
+var filter = numbers.filter(function(n, i) {
+  console.log(i);
+  return n <= 5;
 });
 
-var gradeAStudents = classRoom.students.filter(function(student){
-    return student.score >= 90;
-    
+var gradeAStudents = classRoom.students.filter(function(student) {
+  return student.score >= 90;
+
 });
 console.log(filter);
 console.log(gradeAStudents);
@@ -37,7 +37,7 @@ console.log(gradeAStudents);
 var sum = 0;
 
 for (var n of numbers) {
-    sum+= n;
+  sum += n;
 };
 console.log(sum);
 
@@ -47,16 +47,16 @@ console.log(sum);
 // a = 2, c = 5 => 7
 // a = 7, c = 7 => 14
 // a = 14, c = 1 => 15
-var sum = numbers.reduce(function(accumulator, currentValue){
-    return accumulator + currentValue;
-} , 0);
+var sum = numbers.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
 console.log(sum);
 
 //first parameter is the parameter that's storing 
 //scoreTotal calculates the total score from each student.score
-var scoreTotal = classRoom.students.reduce(function(acc, val){
-    return acc + val.score;
-} , 0);
+var scoreTotal = classRoom.students.reduce(function(acc, val) {
+  return acc + val.score;
+}, 0);
 
 console.log(scoreTotal);
 
@@ -66,20 +66,20 @@ console.log(classRoom);
 //Array Method Chaining
 
 var starStudents = classRoom.students
-    .filter(function(student,){
+  .filter(function(student,) {
     return student.score >= 80;
-})
-    .map(function(value){
+  })
+  .map(function(value) {
     value.score += 5;
     return value;
-})
-    .reduce(function(acc, val , index, array){
+  })
+  .reduce(function(acc, val, index, array) {
     const total = acc.sum + val.score;
     return {
-        sum:total,
-        arr:array,
+      sum: total,
+      arr: array,
     }
-} , {sum: 0, arr: []});
+  }, { sum: 0, arr: [] });
 
 var studentAverage = starStudents.sum / starStudents.arr.length
 console.log(starStudents, studentAverage);
