@@ -23,7 +23,7 @@ console.log('Part 1: ' +  reverseStringWithBuiltInFunctions(str));
     var r = "";
     for (var i = str.length - 1; i >= 0; i--)
     {
-        r+= str.charAt(i);
+        r+= str[i];
     }
     return r;
  }
