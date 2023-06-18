@@ -112,7 +112,7 @@ function student(firstName,lastName,age){
 }
 
 var students = [];
-var s1 = new student('Johnny' , 'Tsunami' , 5);
+var s1 = new student('Johnny' , 'Tsunami' , 5); 
 console.log(s1);
 console.log(s1.greeting());
 
@@ -131,5 +131,155 @@ for (var x in student) {
     console.log(student[x]);
 }
 
+//ES6 Javascript Objects
+//an object type containing key value pairs
+//things that aren't a premitive in JS are objects
+
+var car = {
+    make : 'Dodge',
+    model : 'Charger',
+    wheels : 4
+};
+
+//Bracket Notation
+console.log(`I have a ${car['make']} that has ${car['wheels']} wheels` );
+//Dot Notation
+console.log(`I have a ${car.make} that has ${car.wheels} wheels `);
+
+//Object Literal
+
+var employee = {
+    firstName: 'Joe',
+    lastName : 'Blow',
+    //method
+    fullName: function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+//Property
+console.log(`Our IT director is ${employee.firstName}`);
+console.log(`His full name is ${employee.fullName()}`);
+
+// Object constructor function
+function Vehicle (make, model, year){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.getFullDescription = function() {
+        return `${this.year} ${this.make} ${this.model} `
+    };
+}
+
+let myCar = new Vehicle ('Subaru' ,'Impreza', '2023' );
+let mySistersCar = new Vehicle ('Subaru' ,'Outback', '2022' );
+
+console.log(myCar.year , myCar.make, myCar.model)
+console.log(mySistersCar.getFullDescription());
+
+// function createVehicle(year,make,model) {
+//     return {
+//         make: make,
+//         model: model,
+//         year: year,
+//         getFullDescription: function(){
+//             return `${year} ${make} ${model}`;
+//         }
+//     };
+// }
+
+// let myCar2 = createVehicle('2023', 'Tesla' , 'Model Y');
+// let myFriendsCar = createVehicle('2023', 'Mercedez' , 'E Class');
+
+//ES6 Enhanced Object Literal Syntax
+function createVehicle(year,make,model) {
+    return {
+        make,
+        model,
+        year,
+        getFullDescription: function(){
+            return `${year} ${make} ${model}`;
+        }
+    };
+}
 
 
+let myCar2 = createVehicle('2023', 'Tesla' , 'Model Y');
+let myFriendsCar = createVehicle('2023', 'Mercedez' , 'E Class');
+
+let cars = [];
+cars.push(myCar2);
+cars.push(myFriendsCar);
+
+console.log(cars);
+
+// JavaScript Scope
+/* Scope determines the accessibility (visibility) of variable. */
+
+//Global - A global vairbale has global scope
+//All scripts and functions on a web page can access it
+
+var user1 = {
+    name: 'Bobby',
+    age: 28,
+    data : 'All the important things....',
+}
+
+
+if (true){
+    var name = 'Andre';
+};
+
+//Local - Variable delcared within a function
+//become LOCAL to a function
+
+// function userBDay(age){
+//     var newAge = age + 1;
+//     user1.age = newAge;
+//     console.log('Happy Birthday ' + user1.name + '! You are ' + newAge + ' years old!' )
+// };
+
+// userBDay(user1.age);
+// console.log(user1);
+
+/*ES2015 /ES6 */
+//Introduced 'let' and 'const'
+//These two keywords provide Block Scope Variables (and costants) in JavaScript;
+
+//Variables declared inside a block {} CANNOT be
+//accessed from outside the block;
+
+//let
+var x = 10;
+if (true) {
+ let x = 2;
+ if (true){
+    x = 'Hello';
+    for (var i = 0; i < 4; i++){
+        x = i; //i was declared in the for loop so it can't be accessed by that console.log
+    }
+ }
+};
+
+console.log(x);
+console.log(i);
+
+//const
+const animal = 'Racoon';
+console.log(animal);
+// animal = 'cat'; (console logs uncaught type error. animal declared as racoon)
+const user2 = {
+    name: 'Rambo',
+    age: 73,
+}
+
+function userBDay(age){
+    const newAge = age + 1;
+    user2.age = newAge;
+    console.log('Happy Birthday ' + user2.name + '! You are ' + newAge + ' years old!' )
+};
+userBDay(user2.age);
+
+console.log(user2);
+
+// const is helpful to prevent accidental assignment
