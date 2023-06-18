@@ -1,9 +1,10 @@
-function numbers(){
-    let x = 0;
-    while (x < 100) {
-        x += 2
-        console.log(`Even number: ${x}`)
+function numbers(range){
+    for (let n = 1; n <= range; n++)
+    {  console.count('iterations');
+        if (n%2 === 0){
+            console.log(n);
+          
+        }
     }
-    return x;
-};
-console.log(numbers());
+}
+console.log(numbers(100));

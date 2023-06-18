@@ -1,4 +1,4 @@
-/Exercise: String Sum
+//Exercise: String Sum
 
 // Create a function that takes a String as a parameter.
 

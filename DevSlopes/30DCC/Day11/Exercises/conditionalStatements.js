@@ -10,15 +10,13 @@ function difference(num){
     return  27 - num
   }
   else {
-    return (math.abs(27 - num)) * 2;
+    return (Math.abs(27 - num)) * 2;
   }
 }
 console.log(difference(42));
 // Example:
 
 // Given 42, the returned result would be 30. ( (42-27) * 2)
-
-
 
 // Exercise 2:
 
@@ -27,12 +25,26 @@ console.log(difference(42));
 // Example:
 
 // Given 12 and 12, the result would be 72. ( 12 === 12 so (12 + 12) * 3 = 72)
+function sum(int1, int2){
+  if (int1 === int2){
+    return (int1 + int2) * 3;
+  }
+  else {
+    return int1 + int2;
+  }
+};
+console.log(sum(11,12));
+console.log(sum(12,12));
 
 
 
 // Exercise 3:
 
-// Write a JavaScript program to check two given numbers and return true IF one of the number is 40 OR if their sum is 40. - else return false
+// Write a JavaScript program to check two given numbers and return true IF one of the number is 40
+//OR if their sum is 40. - else return false
+
+
+
 // Example:
 
 // Given 40 and 40 would return true (one or both numbers are 40)

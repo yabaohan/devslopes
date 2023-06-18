@@ -1,9 +1,8 @@
-function numbers(){
-    let x = 0;
-    while (x < 100) {
-        x += 2
-        console.log(`Even number: ${x}`)
+function numbers(range){
+    for ( let i = 2; i <= range; i +=2){
+        console.count('iterations');
+        console.log(i);
     }
 
 };
-console.log(numbers());
+console.log(numbers(100));
