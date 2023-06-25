@@ -35,7 +35,6 @@ console.log(gradeAStudents);
 //Reduce
 //takes elements of an array and reduce it to a single value
 var sum = 0;
-
 for (var n of numbers) {
   sum += n;
 };
