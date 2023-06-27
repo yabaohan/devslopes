@@ -25,9 +25,9 @@ const yabaohan = {
   name: "Hans",
   last: "Yabao",
   urls: {
-    social: {
+    socials: {
       facebook: 'facebook/yabaohan',
-      instagram: 'hashuablue',
+      instagram: 'instagram/hashuablue',
     },
     web: {
       website: 'web/yabaohan',
@@ -36,8 +36,21 @@ const yabaohan = {
   }
 }
 
-console.log(yabaohan.name);
-console.log(yabaohan.last);
-console.log(yabaohan.urls.social.instagram);
-console.log(yabaohan.urls.web.website);
+
+const {name , last } = yabaohan;
+//You can reassign extracted properties
+const {facebook: fb, instagram : ig} = yabaohan.urls.socials
+const shape = {width: 200, height: 400};
+//You can also assign new values into a destructured object
+const {width = 100 , height = 100 ,bgColor = 'Red',borderR = '8px'} = shape;
+
+console.log(width);
+console.log(height);
+
+
+console.log(name);
+console.log(last);
+
+console.log(ig);
+console.log(fb);
 
