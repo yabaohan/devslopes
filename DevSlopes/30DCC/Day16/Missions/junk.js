@@ -2,14 +2,19 @@
 
 //Symbols to remove: { } [ ] ! < > ( )
 
-function stringCleaner(str) {
-  let nonAlphaNumerics = / { } [ ] ! < > ( )/g;
+// function stringCleaner(str) {
+//   let nonAlphaNumerics = / { } [ ] ! < > ( )/g;
 
-  stringCleaner =
-    str.replace(nonAlphaNumerics, " ");
+//   stringCleaner =
+//     str.replace(nonAlphaNumerics, " ");
 
-  return stringCleaner;
-}
+//   return stringCleaner;
+// }
+
+const specialChars = "{}[]!<>()";
+let junkString = "I(love)to<code>everyday. [Do!youlike!(cats?)]"
+
+const replaceJunk = (string) =? string.replace(/[{\!<>()}]/g, " ");
 
 // function stringCleaner(str){
 //   const junkSymbols = ["[]","{}", ">", "<", "()"]
@@ -22,4 +27,4 @@ function stringCleaner(str) {
 
 
 
-console.log(stringCleaner("{this} [a ] !<test>"));
+console.log(replaceJunk(junkString));
