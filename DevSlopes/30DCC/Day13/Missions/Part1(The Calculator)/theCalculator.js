@@ -12,7 +12,6 @@ function calcuation (num1, num2, operation){
     else if (operation === '*')
     {sol = num1*num2}
     
-  
     return sol;
 }
 
