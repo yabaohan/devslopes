@@ -14,7 +14,7 @@
 const specialChars = "{}[]!<>()";
 let junkString = "I(love)to<code>everyday. [Do!youlike!(cats?)]"
 
-const replaceJunk = (string) =? string.replace(/[{\!<>()}]/g, " ");
+// const replaceJunk = (string) =? string.replace(/[{\!<>()}]/g, " ");
 
 // function stringCleaner(str){
 //   const junkSymbols = ["[]","{}", ">", "<", "()"]
